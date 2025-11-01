@@ -15,5 +15,7 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "repository": "https://github.com/Origami5667/Blind_shield.git",
+  "author": "origami5667 <davimike05@gmail.com>"
 }

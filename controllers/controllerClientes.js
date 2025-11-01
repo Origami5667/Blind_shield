@@ -12,10 +12,15 @@ export async function listarClientes(req, res){
 
 export async function cadastrarClientes(req, res){
     const data = req.body;
+    const novoCliente = await modelCliente.cadastrarClientes(data);
+    res.json(novoCliente);
 }
 
 export async function atualizarClientes(req, res){
-    const id = req.params;
+    const id = req.params.id;
+    const dados = req.body;
+    const atualizaCliente = await modelCliente.atualizarCliente(id, dados);
+    res.json(atualizaCliente);
 }
 
 export async function deletarClientes(req, res){
