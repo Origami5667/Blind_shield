@@ -9,7 +9,7 @@ const PORTA  =process.env.PORTA;
 app.use(express.json());
 app.use(express.static('views'));
 
-app.use('./cliente', routerCliente);
+app.use('/cliente', routerCliente);
 
 app.get('/', (req, res) => {
     res.sendFile('views/index.html', {root: '.'});

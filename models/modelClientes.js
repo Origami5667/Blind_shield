@@ -2,64 +2,65 @@ import conexao from "../database/conexao.js";
 
 class modelCliente {
   static async listar() {
-    const con = conexao();
+    const con = await conexao();
     try {
       const sql = "SELECT * FROM cliente";
-      const [linhas] = await con.execute(sql);
+      const [linhas] = await con.execute(sql)
       return linhas;
     } catch (e) {
       console.log(e);
     } finally {
-      await con.end();
+       await con.end()
     }
   }
 
   static async listarPorId() {
-    const con = conexao();
+    const con = await conexao();
     try {
       const sql = "SELECT *FROM cliente WHERE id_cliente = ?";
-      const [linhas] = await con.execute();
+      const [linhas] = await con.execute(sql)
       return linhas;
     } catch (e) {
       console.log(e);
     } finally {
-      con.end();
+      con.end()
     }
   }
 
-  static async deletarCliente() {
-    const con = conexao();
+  static async deletarClientes() {
+    const con = await conexao();
     try {
       const sql = "DELETE FROM cliente WHERE id_cliente = ?";
-      const [resultado] = await con.execute(sql, [id]);
+      const [resultado] = await con.execute(sql, [id])
       return resultado;
     } catch (e) {
       console.log(e);
     } finally {
-      await con.end();
+      await con.end()
     }
   }
 
-  static async cadastrarClientes() {
-    const con = conexao();
+  static async cadastrarClientes(data) {
+    const con = await conexao();
+    //const data = req.body;
     try {
       const sql =
         "INSERT INTO cliente (nome_cliente, email_cliente, senha_cliente) VALUES (?, ?, ?)";
       const [resultado] = await con.execute(sql, [
-        novoCliente.nome_cliente,
-        novoClinete.email_cliente,
-        novoCliente.senha_cliente,
-      ]);
+        data.nome_cliente,
+        data.email_cliente,
+        data.senha_cliente,
+      ])
       return resultado;
     } catch (e) {
       console.log(e);
     } finally {
-      await con.end();
+      await con.end()
     }
   }
 
-  static async atualizarCliente() {
-    const con = conexao();
+  static async atualizarClientes() {
+    const con = await conexao();
     try {
       const sql =
         "UPDATE cliente SET nome_cliente = ?, email_cliente = ?, senha_cliente = ? WHERE id_cliente = ?";
@@ -68,12 +69,14 @@ class modelCliente {
         atualizaCliente.email_cliente,
         atualizaCliente.senha_cliente,
         id
-      ]);
+      ])
       return atualiza;
     } catch (e) {
       console.log(e);
     } finally {
-      await con.end();
+      await con.end()
     }
   }
 }
+
+export default modelCliente;

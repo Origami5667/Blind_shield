@@ -6,8 +6,8 @@ dotenv.config();
 const dbConfig = {
     host: 'localhost',
     user: 'root',
-    password: '12345678',
-    database: 'tarefas',
+    password: 'D@Vi0512',
+    database: 'blind_shield',
     port: 3306
 };
 

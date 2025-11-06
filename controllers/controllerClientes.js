@@ -19,13 +19,13 @@ export async function cadastrarClientes(req, res){
 export async function atualizarClientes(req, res){
     const id = req.params.id;
     const dados = req.body;
-    const atualizaCliente = await modelCliente.atualizarCliente(id, dados);
+    const atualizaCliente = await modelCliente.atualizarClientes(id, dados);
     res.json(atualizaCliente);
 }
 
 export async function deletarClientes(req, res){
     const id = req.params.id;
-    const cliente = await modelCliente.deletarCliente(id);
+    const cliente = await modelCliente.deletarClientes(id);
     res.json(cliente);
 }
 
@@ -35,10 +35,10 @@ export async function listarClientesPorId(req, res){
     res.json(cliente);
 }
 
-export default (
+export default {
     listarClientes,
     cadastrarClientes,
     atualizarClientes,
     deletarClientes,
     listarClientesPorId
-)
+}
