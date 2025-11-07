@@ -5,12 +5,12 @@ class modelCliente {
     const con = await conexao();
     try {
       const sql = "select * from cliente";
-      const [linhas] = await con.execute(sql)
+      const [linhas] = await con.execute(sql);
       return linhas;
     } catch (e) {
       console.log(e);
     } finally {
-       await con.end()
+      await con.end();
     }
   }
 
@@ -18,12 +18,12 @@ class modelCliente {
     const con = await conexao();
     try {
       const sql = "SELECT *FROM cliente WHERE id_cliente = ?";
-      const [linhas] = await con.execute(sql)
+      const [linhas] = await con.execute(sql);
       return linhas;
     } catch (e) {
       console.log(e);
     } finally {
-      con.end()
+      con.end();
     }
   }
 
@@ -31,12 +31,12 @@ class modelCliente {
     const con = await conexao();
     try {
       const sql = "DELETE FROM cliente WHERE id_cliente = ?";
-      const [resultado] = await con.execute(sql, [id])
+      const [resultado] = await con.execute(sql, [id]);
       return resultado;
     } catch (e) {
       console.log(e);
     } finally {
-      await con.end()
+      await con.end();
     }
   }
 
@@ -50,31 +50,40 @@ class modelCliente {
         data.nome_cliente,
         data.email_cliente,
         data.senha_cliente,
-      ])
-      return resultado;
+      ]);
+      if(resultado.affectedRows > 0){
+      return {...data};
+      }
     } catch (e) {
       console.log(e);
     } finally {
-      await con.end()
+      await con.end();
     }
   }
 
-  static async atualizarClientes(data, id ) {
+  static async atualizarClientes(id, dados) {
     const con = await conexao();
     try {
       const sql =
         "UPDATE cliente SET nome_cliente = ?, email_cliente = ?, senha_cliente = ? WHERE id_cliente = ?";
       const [atualiza] = await con.execute(sql, [
-        data.nome_cliente,
-        data.email_cliente,
-        data.senha_cliente,
-        id
-      ])
-      return atualiza;
+        dados.nome_cliente,
+        dados.email_cliente,
+        dados.senha_cliente,
+        id,
+      ]);
+      if (atualiza.affectedRows > 0) {
+        return {
+          id_cliente: id,
+          ...dados
+        };
+      } else {
+        throw new Error('Cliente não encontrado ou nenhum dado para atualizar.');
+      }
     } catch (e) {
       console.log(e);
     } finally {
-      await con.end()
+      await con.end();
     }
   }
 }
