@@ -4,11 +4,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const dbConfig = {
-    host: 'localhost',
-    user: 'root',
-    password: 'D@Vi0512',
-    database: 'blind_shield',
-    port: 3306
+    host: process.env.BD_HOST,
+    user: process.env.BD_USER,
+    password: process.env.BD_PASSWORD,
+    database: process.env.BD_NAME,
+    port: process.env.BD_PORT
 };
 
 export async function conectarBanco() {
