@@ -2,11 +2,11 @@ import modelCliente from '../models/modelClientes.js';
 
 export async function listarClientes(req, res){
     try {
-        const clientes = modelCliente.listar();
-        res.json(clientes);
-    } catch (error){
+        const tarefas = await modelCliente.listar();
+        res.json(tarefas);
+    } catch (error) {
         console.error('Erro na consulta: ', error);
-        res.status(500).json({erro: erro.message});
+        res.status(500).json({ erro: error.message });
     }
 }
 

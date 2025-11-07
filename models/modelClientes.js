@@ -4,7 +4,7 @@ class modelCliente {
   static async listar() {
     const con = await conexao();
     try {
-      const sql = "SELECT * FROM cliente";
+      const sql = "select * from cliente";
       const [linhas] = await con.execute(sql)
       return linhas;
     } catch (e) {
@@ -59,15 +59,15 @@ class modelCliente {
     }
   }
 
-  static async atualizarClientes() {
+  static async atualizarClientes(data, id ) {
     const con = await conexao();
     try {
       const sql =
         "UPDATE cliente SET nome_cliente = ?, email_cliente = ?, senha_cliente = ? WHERE id_cliente = ?";
       const [atualiza] = await con.execute(sql, [
-        atualizaCliente.nome_cliente,
-        atualizaCliente.email_cliente,
-        atualizaCliente.senha_cliente,
+        data.nome_cliente,
+        data.email_cliente,
+        data.senha_cliente,
         id
       ])
       return atualiza;
