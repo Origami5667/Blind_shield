@@ -1,6 +1,6 @@
 import modelCliente from '../models/modelClientes.js';
 
-export async function listarClientes(req, res){
+export async function listarClientes(req, res) {
     try {
         const tarefas = await modelCliente.listar();
         res.json(tarefas);
@@ -10,28 +10,32 @@ export async function listarClientes(req, res){
     }
 }
 
-export async function cadastrarClientes(req, res){
+export async function cadastrarClientes(req, res) {
     const data = req.body;
     const novoCliente = await modelCliente.cadastrarClientes(data);
     res.json(novoCliente);
 }
 
-export async function atualizarClientes(req, res){
+export async function atualizarClientes(req, res) {
     const id = req.params.id;
     const dados = req.body;
     const atualizaCliente = await modelCliente.atualizarClientes(id, dados);
     res.json(atualizaCliente);
 }
 
-export async function deletarClientes(req, res){
+export async function deletarClientes(req, res) {
     const id = req.params.id;
     const cliente = await modelCliente.deletarClientes(id);
-    res.json(cliente);
+    if (cliente && cliente.affectedRows > 0){
+        res.json({message: 'Cliente deletado'})
+    } else {
+        res.json({message: 'Cliente não encontrado'})
+    }
 }
 
-export async function listarClientesPorId(req, res){
+export async function listarClientesPorId(req, res) {
     const id = req.params.id;
-    const cliente = await modelCliente.listarPorId(id);
+    const cliente = await modelCliente.listarPorId(id,);
     res.json(cliente);
 }
 

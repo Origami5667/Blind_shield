@@ -14,11 +14,11 @@ class modelCliente {
     }
   }
 
-  static async listarPorId() {
+  static async listarPorId(id) {
     const con = await conexao();
     try {
       const sql = "SELECT *FROM cliente WHERE id_cliente = ?";
-      const [linhas] = await con.execute(sql);
+      const [linhas] = await con.execute(sql, [id]);
       return linhas;
     } catch (e) {
       console.log(e);
@@ -27,7 +27,7 @@ class modelCliente {
     }
   }
 
-  static async deletarClientes() {
+  static async deletarClientes(id) {
     const con = await conexao();
     try {
       const sql = "DELETE FROM cliente WHERE id_cliente = ?";
@@ -51,8 +51,8 @@ class modelCliente {
         data.email_cliente,
         data.senha_cliente,
       ]);
-      if(resultado.affectedRows > 0){
-      return {...data};
+      if (resultado.affectedRows > 0) {
+        return { ...data };
       }
     } catch (e) {
       console.log(e);
