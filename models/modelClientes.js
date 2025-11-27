@@ -23,7 +23,7 @@ class modelCliente {
     } catch (e) {
       console.log(e);
     } finally {
-      con.end();
+      await con.end();
     }
   }
 

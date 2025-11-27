@@ -2,8 +2,8 @@ import modelCliente from '../models/modelClientes.js';
 
 export async function listarClientes(req, res) {
     try {
-        const tarefas = await modelCliente.listar();
-        res.json(tarefas);
+        const clientes = await modelCliente.listar();
+        res.json(clientes);
     } catch (error) {
         console.error('Erro na consulta: ', error);
         res.status(500).json({ erro: error.message });
