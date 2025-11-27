@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import routerCliente from './routes/routerClientes.js';
 import routerVeiculos from './routes/routerVeiculos.js';
+import routerEmpresa from './routes/routerEmpresa.js';
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ app.use(express.static('views'));
 
 app.use('/cliente', routerCliente);
 app.use('/veiculo', routerVeiculos);
+app.use('/empresa', routerEmpresa);
 
 app.get('/', (req, res) => {
     res.sendFile('views/login.html', { root: '.' });
