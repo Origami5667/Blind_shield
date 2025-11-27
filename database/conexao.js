@@ -1,4 +1,4 @@
-import mysqsl from 'mysql2/promise';
+import mysql from 'mysql2/promise';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -13,11 +13,11 @@ const dbConfig = {
 
 export async function conectarBanco() {
     try {
-        const connection = await mysqsl.createConnection(dbConfig);
+        const connection = await mysql.createConnection(dbConfig);
         console.log('conectando ao MYSQL!')
         return connection
     } catch (error) {
-        console.error('Erro ao conectar:', error.mensage);
+        console.error('Erro ao conectar:', error.message);
         throw error;
 
     }
