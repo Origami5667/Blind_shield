@@ -17,7 +17,7 @@ class modelFuncionario {
     const con = await conexao();
     try {
       const sql =
-        "UPDATE funcionario SET nome_funcionario = ?, cargo_funcionario = ?, senha_funcionario = ?";
+        "UPDATE funcionario SET nome_funcionario = ?, cargo_funcionario = ?, senha_funcionario = ? WHERE id_funcionario = ?";
       const [atualiza] = await con.execute(sql, [
         dados.nome_funcionario,
         dados.cargo_funcionario,
@@ -27,7 +27,7 @@ class modelFuncionario {
 
       if (atualiza.affectedRows > 0) {
         return {
-          id_cliente: id,
+          id_funcionario: id,
           ...dados,
         };
       } else {
@@ -45,7 +45,7 @@ class modelFuncionario {
   static async listarPorId(id) {
     const con = await conexao();
     try {
-      const sql = "SELECT * FROM funcionario WHERE id_cliente = ?";
+      const sql = "SELECT * FROM funcionario WHERE id_funcionario = ?";
       const [linhas] = await con.execute(sql, [id]);
       return linhas;
     } catch (e) {
@@ -59,7 +59,7 @@ class modelFuncionario {
     const con = await conexao();
     try {
       const sql =
-        "INSERT INTO funcionario (nome_funcionario, cpf_funcionario, cargo_funcionario, cargo_funcionario) VALUES (?, ?, ?, ?)";
+        "INSERT INTO funcionario (nome_funcionario, cpf_funcionario, cargo_funcionario, senha_funcionario) VALUES (?, ?, ?, ?)";
       const [resultado] = await con.execute(sql, [
         data.nome_funcionario,
         data.cpf_funcionario,

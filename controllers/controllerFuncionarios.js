@@ -13,10 +13,8 @@ export async function listarFuncionarios(req, res) {
 export async function buscarPorId(req, res) {
   try {
     const id = req.params.id;
-    const dados = req.body;
-    const buscarPorId = await modelFuncionario.atualizarFuncionario(
+    const buscarPorId = await modelFuncionario.listarPorId(
       id,
-      dados
     );
     res.json(buscarPorId);
   } catch (error) {
@@ -28,7 +26,7 @@ export async function buscarPorId(req, res) {
 export async function cadastrarFuncionarios(req, res) {
   try {
     const data = req.body;
-    const atualizarCliente = await modelFuncionario.atualizarFuncionario(data);
+    const atualizarCliente = await modelFuncionario.cadastrarFuncionario(data);
     res.json(atualizarCliente);
   } catch (error) {
     console.error("Erro no cadastro: ", error);
@@ -55,7 +53,7 @@ export async function atualizarFuncionarios(req, res) {
   try {
     const id = req.params.id;
     const dados = req.body;
-    const atualizarFuncionario = modelFuncionario.atualizarFuncionario(id, dados);
+    const atualizarFuncionario = await modelFuncionario.atualizarFuncionario(id, dados);
     res.json(atualizarFuncionario);
   } catch (error) {
     console.error("Erro na atualização: ", error);
