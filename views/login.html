@@ -4,74 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login • Blind Shield</title>
-    <style>
-        body {
-            background: #0f0f0f;
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #e7e7e7;
-        }
-
-        .login-box {
-            background: #141414;
-            padding: 35px;
-            width: 370px;
-            border-radius: 12px;
-            border: 1px solid #1f1f1f;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        }
-
-        h2 {
-            margin-bottom: 15px;
-            color: #00c2ff;
-            text-align: center;
-        }
-
-        .input {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 15px;
-        }
-
-        .input label {
-            margin-bottom: 5px;
-        }
-
-        .input input {
-            padding: 12px;
-            border-radius: 6px;
-            border: none;
-            background: #1b1b1b;
-            color: white;
-        }
-
-        button {
-            width: 100%;
-            padding: 14px;
-            background: #00c2ff;
-            border: none;
-            border-radius: 6px;
-            color: black;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: #0096c7;
-        }
-
-        .error {
-            margin-top: 12px;
-            color: #ff4d4d;
-            text-align: center;
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 
@@ -100,7 +33,7 @@ function login() {
 
     // Checa se o email não está vazio e senha fixa
     if (email !== "" && senha === "12345678") {
-        window.location.href = "index.html"; // Redireciona para o painel
+        window.location.href = "inicioCliente.html"; // Redireciona para o painel
     } else {
         document.getElementById("erro").style.display = "block";
     }

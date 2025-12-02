@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/inicio', (req, res) => {
-    res.sendFile('views/index.html', { root: '.' });
+    res.sendFile('views/indexCliente.html', { root: '.' });
 });
 
 app.listen(PORTA, () => {
