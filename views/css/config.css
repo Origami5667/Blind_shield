@@ -1,0 +1,189 @@
+/* -------------------------------------- */
+/* 1. RESET E ESTILOS BASE */
+/* -------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #0f0f0f;
+    color: #e7e7e7;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* -------------------------------------- */
+/* 2. MENU LATERAL (Sidebar) */
+/* -------------------------------------- */
+.sidebar {
+    width: 260px;
+    background: #141414;
+    padding: 30px 20px;
+    border-right: 2px solid #1f1f1f;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: #00c2ff;
+    letter-spacing: 1px;
+}
+
+/* Estilo da lista de navegação */
+.nav-item ul {
+    list-style: none;
+}
+
+.nav-item ul li a {
+    color: #eee;
+    text-decoration: none;
+    display: block;
+    padding: 12px 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.nav-item ul li a:hover {
+    background: #1f1f1f;
+    color: #007da2;
+}
+
+/* Estilo para o item 'Configurações' (página ativa) */
+
+
+/* -------------------------------------- */
+/* 3. CONTEÚDO PRINCIPAL (Content) */
+/* -------------------------------------- */
+.content {
+    flex: 1;
+    padding: 35px 50px;
+    min-width: 0;
+}
+
+/* -------------------------------------- */
+/* 4. SEÇÃO HERO */
+/* -------------------------------------- */
+.hero {
+    width: 100%;
+    height: 200px; /* Reduzido um pouco para a tela de Configurações */
+    background: url('https://quatrorodas.abril.com.br/wp-content/uploads/2023/10/Volvo-EX30-01-e1698246813476.jpg?quality=90&strip=info&w=1280') center/cover;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 35px;
+}
+
+/* Efeito de sobreposição escura */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+    z-index: 1;
+}
+
+.hero-text {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 34px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    opacity: 0.9;
+    font-size: 16px;
+}
+
+
+/* -------------------------------------- */
+/* 5. SEÇÕES E CARDS DE INFORMAÇÃO */
+/* -------------------------------------- */
+.section-title {
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #00c2ff;
+    margin-bottom: 5px;
+}
+
+.subtitle { opacity: 0.8; margin-bottom: 25px; font-size: 15px; }
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #141414;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #1f1f1f;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    overflow: hidden;
+    cursor: pointer; /* Indica que o card é clicável */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #00c2ff;
+    box-shadow: 0 5px 15px rgba(0,194,255,0.1);
+}
+
+.card h3 {
+    color: #00c2ff;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+    opacity: 0.8;
+    display: block;
+}
+
+/* 6. LISTA DETALHADA DE CONFIGURAÇÕES */
+.info-list {
+    margin-top: 15px;
+    line-height: 2.5; /* Espaçamento maior para a lista de settings */
+    background: #141414;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #1f1f1f;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.info-list p {
+    color: #00c2ff;
+    font-size: 16px;
+    margin-bottom: 5px;
+}

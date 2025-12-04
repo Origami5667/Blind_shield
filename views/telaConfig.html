@@ -4,81 +4,72 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Painel Inicial • Sistema de Blindagem</title>
-    <link rel="stylesheet" href="css/config.css">
+    <title>Configurações • Sistema de Blindagem</title> <link rel="stylesheet" href="css/config.css">
 </head>
 
 <body>
 
-    <!-- MENU LATERAL -->
     <div class="sidebar">
         <h2>BlindShield</h2>
         <div class="nav-item">
             <ul>
                 <li><a href="inicioCliente.html">Inicio</a></li>
                 <li><a href="telaVeiculos.html">Seus veiculos</a></li>
-                <li><a href="telaConfig.html">Configurações</a></li>
+                <li style="background: #1f1f1f;"><a href="telaConfig.html" style="color: #00c2ff;">Configurações</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- ÁREA PRINCIPAL -->
     <div class="content">
 
         <div class="hero">
             <div class="hero-text">
-                <div id="nome"></div>
-                <h1>Seu nome</h1>
-                <p>Veiculos cadastrados</p>
-                <p id="cadasVeiculo" class="dadosVeiculo"></p>
+                <h1>Configurações do Sistema</h1> <p>Ajuste suas preferências de conta, segurança e notificações.</p>
             </div>
         </div>
+
+        <h2 class="section-title">Opções Principais</h2>
+        <p class="subtitle">Selecione uma área para gerenciar as configurações.</p>
 
         <div class="cards">
+            
             <div class="card">
-                <h3>Nível atual da blindagem</h3>
-                <p><b> III-A</b> • Proteção contra armas curtas.</p>
-                <img
-                    src="https://lh3.googleusercontent.com/proxy/JOKgrha4f4B5A-jKU7tQrZrZKnTHzvCRWF0fPd2j8ctlmEEaQw62G2OSdkthiwg9z7CbN30M8t8j9KMFOVsEDVY_2dBoaLIJDw6pp__-SLpyn3miPnUfTxyoYXcao0Yd6A" />
+                <h3>Conta e Perfil</h3>
+                <p>Altere nome, e-mail e foto do perfil.</p>
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=260&h=150&fit=crop&auto=format&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ícone de Usuário" />
             </div>
 
             <div class="card">
-                <h3>Materiais aplicados</h3>
-                <p>Aramida, Aço balístico, Manta antiestilhaço.</p>
-                <img
-                    src="https://s2-autoesporte.glbimg.com/d3jCSBt-FNReD8wUNKM-9poo0s8=/0x0:1920x1280/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2025/Z/2/YtqBiGT56LUiZnx1rrNw/carbon-blindados-barueri-2.jpg" />
+                <h3>Segurança e Acesso</h3>
+                <p>Gerencie sua senha e autenticação de dois fatores.</p>
+                <img src="https://images.unsplash.com/photo-1531771686035-ceac803797ce?q=80&w=260&h=150&fit=crop&auto=format&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ícone de Segurança" />
             </div>
 
             <div class="card">
-                <h3>Integridade Geral</h3>
-                <p>Estado atual: <b>95%</b></p>
-                <img
-                    src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/12/Carbon-14.12-85.jpg?quality=70&strip=info&w=720&crop=1" />
+                <h3>Notificações</h3>
+                <p>Defina como deseja receber alertas de manutenção.</p>
+                <img src="https://images.unsplash.com/photo-1543360401-2e6973307525?q=80&w=260&h=150&fit=crop&auto=format&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ícone de Notificação" />
             </div>
         </div>
-
-
-        <!-- <h2 class="section-title">Informações Técnicas</h2> 
-    <div class="info-list">
-        • Vidros: Multicamadas 19mm<br>
-        • Peso adicionado: +180kg<br>
-        • Proteção contra 9mm e .44 Magnum<br>
-        • Estrutura reforçada em portas, colunas e teto<br>
-        • Proteção antiestilhaço total<br>
-        • Testes internos: aprovados (último ciclo em 03/2025)
-    </div>
-
-    <h2 class="section-title">Configurações do Sistema</h2>
-    <div class="info-list">
-        • Alertas de revisão ativados<br>
-        • Relatórios automáticos semanais<br>
-        • Backup em nuvem habilitado<br>
-        • Sincronização diária ativa
-    </div>-->
+        
+        <h2 class="section-title">Configurações Detalhadas</h2>
+        
+        <div class="info-list">
+            <p><strong>Configurações da Conta</strong></p>
+            • Email de Contato: <code>seu.email@dominio.com</code> (<a href="#" style="color: #00c2ff;">Editar</a>)<br>
+            • Idioma: Português (Brasil)<br>
+            • Fuso Horário: GMT-3 (São Paulo)<br>
+            <br>
+            <p><strong>Preferências do Sistema</strong></p>
+            • Alertas de Revisão: <span style="color: #00c2ff;">Ativado</span><br>
+            • Relatórios Automáticos: <span style="color: #00c2ff;">Semanal</span><br>
+            • Tema da Interface: <span style="color: #00c2ff;">Escuro (Padrão)</span><br>
+            • Backup em Nuvem: <span style="color: #ff4d4d;">Pendente</span> (<a href="#" style="color: #00c2ff;">Configurar</a>)
+        </div>
 
     </div>
 
-    <script src="js/inicioCliente.js"></script>
+    <script src="js/config.js"></script>
 </body>
 
 </html>
