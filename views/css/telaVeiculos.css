@@ -1,0 +1,120 @@
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: #0f0f0f; color: #e7e7e7; display: flex; }
+
+        /* MENU LATERAL */
+        .sidebar {
+            width: 260px;
+            background: #141414;
+            height: 100vh;
+            padding: 30px 20px;
+            border-right: 2px solid #1f1f1f;
+        }
+        .sidebar h2 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: #00c2ff;
+            letter-spacing: 1px;
+        }
+        .nav-item {
+            display: flex;
+            padding: 12px 10px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+            flex-direction: column;
+        }
+        ul li a{
+            color: #eee;
+            text-decoration: none;
+        }
+        ul li{
+            padding: 10px;
+            list-style: none;
+        }
+        ul li a:hover {
+            background: #1f1f1f;
+            color: #007da2;
+        }
+
+        /* CONTEÚDO */
+        .content {
+            flex: 1;
+            padding: 35px 50px;
+        }
+        .title {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .subtitle { opacity: 0.8; margin-bottom: 30px; }
+
+        /* HERO */
+        .hero {
+            width: 100%;
+            height: 260px;
+            background: url('https://s2-autoesporte.glbimg.com/gmEbx_Pup7wkfKIG3Wb81JzfXGw=/0x0:1980x1320/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2024/C/I/GB2yNVQBqCuhzEIBqX3Q/rdur3711.jpg') center/cover;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 35px;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0));
+        }
+        .hero-text {
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+        .hero-text h1 { font-size: 34px; color: #00c2ff; margin-bottom: 10px; }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: #141414;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #1f1f1f;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #00c2ff;
+        }
+        .card h3 { color: #00c2ff; margin-bottom: 10px; }
+        
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+            opacity: 0.9;
+            height: 80%;
+        }
+
+        /* LISTAS */
+        .section-title {
+            margin-top: 40px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #00c2ff;
+        }
+        .info-list {
+            margin-top: 15px;
+            line-height: 1.8;
+            background: #141414;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #1f1f1f;
+        }
